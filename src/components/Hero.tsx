@@ -43,7 +43,7 @@ const Hero = () => {
 
       {/* Centered Content Card */}
       <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-        <div className="bg-[#ea7676] backdrop-blur-sm rounded-[3rem] m-3 p-[49px]">
+        <div className="bg-[#ea7676] backdrop-blur-sm rounded-[16px] m-3 p-[49px]">
           {/* Logo Icon */}
           <div className="w-12 h-12 bg-dark-chocolate rounded-full flex items-center justify-center mx-auto mb-8">
             <span className="text-warm-cream text-lg font-bold">F</span>
