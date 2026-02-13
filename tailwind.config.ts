@@ -14,8 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ['Comic Neue', 'cursive'],
+        serif: ['Playpen Sans', 'cursive'],
+        hand: ['Playpen Sans', 'cursive'],
+        body: ['Comic Neue', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,14 +53,24 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        sharpie: {
+          blue: "hsl(var(--sharpie-blue))",
+          red: "hsl(var(--sharpie-red))",
+          yellow: "hsl(var(--sharpie-yellow))",
+          green: "hsl(var(--sharpie-green))",
+          orange: "hsl(var(--sharpie-orange))",
+          grey: "hsl(var(--sharpie-grey))",
+          light: "hsl(var(--sharpie-light))",
+        },
+        // Keep legacy color references working
         warm: {
-          mustard: "hsl(var(--warm-mustard))",
-          tan: "hsl(var(--warm-tan))",
-          terracotta: "hsl(var(--warm-terracotta))",
-          cream: "hsl(var(--warm-cream))",
+          mustard: "hsl(var(--sharpie-yellow))",
+          tan: "hsl(var(--sharpie-light))",
+          terracotta: "hsl(var(--sharpie-orange))",
+          cream: "hsl(var(--background))",
         },
         dark: {
-          chocolate: "hsl(var(--dark-chocolate))",
+          chocolate: "hsl(var(--foreground))",
         },
       },
       borderRadius: {
@@ -68,25 +80,22 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "wobble-slow": {
+          "0%, 100%": { transform: "rotate(-0.5deg)" },
+          "50%": { transform: "rotate(0.5deg)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "wobble-slow": "wobble-slow 3s ease-in-out infinite",
       },
     },
   },
