@@ -32,13 +32,13 @@ const CategoryFilter = ({ activeCategory, onCategoryChange, articleCount }: Cate
   const displayTopic = activeCategory === "All Stories" ? "Topic" : activeCategory;
 
   return (
-    <div className="mb-12 relative" ref={dropdownRef}>
-      <h2 className="text-3xl font-light">
-        <span className="text-dark-chocolate">
+    <div className="mb-12 relative" ref={dropdownRef} style={{ transform: "rotate(-0.3deg)" }}>
+      <h2 className="text-3xl font-serif">
+        <span className="text-foreground">
           Filter {articleCount} {articleCount === 1 ? "article" : "articles"} by{" "}
         </span>
         <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center gap-2 cursor-pointer group">
-          <span className="text-primary relative inline after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-bottom-left">
+          <span className="text-primary font-bold underline decoration-2 underline-offset-4 hover:decoration-primary">
             {displayTopic}
           </span>
           {isOpen ? <ChevronUp className="w-6 h-6 text-primary" /> : <ChevronDown className="w-6 h-6 text-primary" />}
@@ -46,15 +46,15 @@ const CategoryFilter = ({ activeCategory, onCategoryChange, articleCount }: Cate
       </h2>
 
       {isOpen && (
-        <div className="absolute top-full mt-2 bg-card border border-border rounded-2xl shadow-xl z-50 min-w-[240px] py-2">
+        <div className="absolute top-full mt-2 bg-background border-2 border-foreground rounded-[4px] z-50 min-w-[240px] py-2" style={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)", transform: "rotate(0.3deg)" }}>
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => handleCategorySelect(category)}
-              className={`w-full text-left px-6 py-3 transition-colors cursor-pointer ${
+              className={`w-full text-left px-6 py-3 transition-colors cursor-pointer font-bold ${
                 activeCategory === category
-                  ? "bg-primary/10 text-primary font-medium"
-                  : "text-dark-chocolate hover:bg-muted"
+                  ? "bg-primary/10 text-primary"
+                  : "text-foreground hover:bg-muted"
               }`}
             >
               {category}
