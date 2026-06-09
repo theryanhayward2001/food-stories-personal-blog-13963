@@ -42,14 +42,14 @@ const Hero = () => {
 
       {/* Centered Content Card */}
       <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-        <div className="sharpie-card p-8 md:p-12" style={{ transform: "rotate(-0.8deg)" }}>
+        <div className="sharpie-card p-8 md:p-12" style={{ transform: "rotate(-0.8deg)", width: "694px", height: "384px", maxWidth: "none", maxHeight: "none" }}>
           {/* Logo Icon */}
-          <div className="w-12 h-12 bg-foreground border-2 border-foreground rounded-full flex items-center justify-center mx-auto mb-8" style={{ transform: "rotate(1.5deg)" }}>
+          <div className="w-12 h-12 border-2 border-foreground rounded-full flex items-center justify-center mx-auto mb-8" style={{ transform: "rotate(1.5deg)", backgroundColor: "#2483FF" }}>
             <span className="text-background text-lg font-bold font-serif">F</span>
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground mb-4 leading-tight" style={{ transform: "rotate(0.3deg)" }}>
-            Food Stories
+            My news
           </h1>
 
           {/* Newsletter Section */}
@@ -66,6 +66,7 @@ const Hero = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="sharpie-input flex-1 px-6 py-3 bg-background text-foreground placeholder:text-muted-foreground focus:outline-none"
+                style={{ borderRadius: "99px" }}
                 required
                 maxLength={255}
               />
@@ -73,6 +74,7 @@ const Hero = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className="sharpie-btn bg-primary text-primary-foreground px-6 py-3"
+                style={{ borderRadius: "99px" }}
               >
                 {isSubmitting ? "Subscribing..." : "Subscribe"}
               </button>
